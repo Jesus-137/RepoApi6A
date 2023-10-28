@@ -4,13 +4,9 @@ export interface ReactionsRepository {
   getAll(): Promise<Reactions[] | null>;
   getById(id: number): Promise<Reactions | null>
   createReaction(
-    id_raspberry: number,
-    co2: number,
-    ch4: number,
-    ph: number,
-    electricidad: number,
-    tiempo_acumulado: number,
-    fecha: string,
-    hora: string
+    name: string,
+    tiempo: number,
+    cantidad: number,
+    id_expe: number
   ): Promise<Reactions | null>;
 }

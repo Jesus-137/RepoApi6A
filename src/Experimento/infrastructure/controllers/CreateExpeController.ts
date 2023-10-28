@@ -1,32 +1,26 @@
 import { Request, Response } from "express";
-import { CreatePorcentajeUseCase } from "../../application/CreatePorcentajeUseCase";
+import { CreateExpeUseCase } from "../../application/CreateExpeUseCase";
 
 export class CreatePorcentajeController {
   constructor (
-    readonly createPorcentajeUseCase: CreatePorcentajeUseCase
+    readonly createExpeUseCase: CreateExpeUseCase
     ) {}
 
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const porcentaje = await this.createPorcentajeUseCase.run(
-        data.id_raspberry,
-        data.co2,
-        data.ch4,
-        data.ph,
-        data.electricidad
+      const expe = await this.createExpeUseCase.run(
+        data.id_user,
+        data.id_rasp,
       );
-      if (porcentaje){
+      if (expe){
         //Code HTTP : 201 -> Creado
         res.status(201).send({
           status: "success",
           data: {
-            id: porcentaje.id,
-            userName: porcentaje.id_raspberry,
-            password: porcentaje.co2,
-            ch4: porcentaje.ch4,
-            ph: porcentaje.ph,
-            electricidad: porcentaje.electricidad
+            id: expe.id,
+            id_user: expe.id_user,
+            id_rasp: expe.id_rasp
           },
         });
         console.log('Registro exitoso')

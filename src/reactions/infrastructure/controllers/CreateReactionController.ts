@@ -10,28 +10,20 @@ export class CreateReactionController {
     const data = req.body;
     try {
       const reaction = await this.createReactionUseCase.run(
-        data.id_raspberry,
-        data.co2,
-        data.ch4,
-        data.ph,
-        data.electricidad,
-        data.tiempo_acumulado,
-        data.fecha,
-        data.hora
+        data.name,
+        data.cantidad,
+        data.tiempo,
+        data.id_expe
       );
       if (reaction){
         res.status(201).send({
           status: "success",
           data: {
             id: reaction.id,
-            id_raspberry: reaction.id_raspberry,
-            co2: reaction.co2,
-            ch4: reaction.ch4,
-            ph: reaction.ph,
-            electricidad: reaction.electricidad,
-            tiempo_acumulado: reaction.tiempo_acumulado,
-            fecha: reaction.fecha,
-            hora: reaction.hora
+            name: reaction.name,
+            cantidad: reaction.cantidad,
+            tiempo: reaction.tiempo,
+            id_expe: reaction.id_expe
           },
         });
         console.log('Registro exitoso')

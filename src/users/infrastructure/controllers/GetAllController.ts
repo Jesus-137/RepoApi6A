@@ -11,9 +11,9 @@ export class GetAllController {
         res.status(200).send(users.map((user: any) => {
             return {
               id: user.id,
-              id_rapberry: user.id_rapberry,
               userName: user.userName,
-              password: user.password
+              password: user.password,
+              correo: user.correo
             };
           }),
         );

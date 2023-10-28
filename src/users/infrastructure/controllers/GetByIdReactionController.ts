@@ -15,9 +15,9 @@ export class GetByIdReactionController {
           status: "success",
           data: {
             id: user.id,
-            id_raspberry: user.id_raspberry,
             userName: user.userName,
-            password: user.password
+            password: user.password,
+            correo: user.correo
           },
         });
       else

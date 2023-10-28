@@ -1,19 +1,19 @@
-import { MysqlPorcentajeRepository } from "./MysqlPorcentajeRepository";
-import { CreatePorcentajeUseCase } from "../application/CreatePorcentajeUseCase";
-import { GetByIdPorcentajeUseCase } from "../application/GetByIdPorcentajeUseCase";
+import { MysqlPorcentajeRepository } from "./MysqlExpeRepository";
+import { CreateExpeUseCase } from "../application/CreateExpeUseCase";
+import { GetByIdExpeUseCase } from "../application/GetByIdExpeUseCase";
 import { GetAllUseCase } from "../application/GetAllUseCase";
-import { CreatePorcentajeController } from "./controllers/CreatePorcentajeController";
+import { CreatePorcentajeController } from "./controllers/CreateExpeController";
 import { GetAllController } from "./controllers/GetAllController";
-import { GetByIdPorcentajeController } from "./controllers/GetByIdPorcentajeController";
+import { GetByIdPorcentajeController } from "./controllers/GetByIdExpeController";
 
 export const mysqlReactionsRepository = new MysqlPorcentajeRepository();
-export const createPorcentajeUseCase = new CreatePorcentajeUseCase(
+export const createPorcentajeUseCase = new CreateExpeUseCase(
   mysqlReactionsRepository
 );
 export const getAllUseCase = new GetAllUseCase(
   mysqlReactionsRepository
 );
-export const getByIdPorcentajeUseCase = new GetByIdPorcentajeUseCase(
+export const getByIdPorcentajeUseCase = new GetByIdExpeUseCase(
   mysqlReactionsRepository
 );
 export const createPorcentajeController = new CreatePorcentajeController(

@@ -1,9 +1,9 @@
 import { Signale } from "signale";
 import express from "express";
-import { reactionsRouter } from "./reactions/infrastructure/ReactionsRouter"; 
-import { usersRouter } from "./users/infrastructure/UsersRouter";
-import { porcentajeRouter } from "./Porcentaje_Reaction/infrastructure/porcentajeRouter";
-import { raspRouters } from "./raspberry/infrastructure/RaspRouters";
+import { reactionsRouter } from "./Reactions/infrastructure/ReactionsRouter"; 
+import { usersRouter } from "./Users/infrastructure/UsersRouter";
+import { expeRouter } from "./Experimento/infrastructure/ExpeRouter";
+import { raspRouters } from "./Raspberry/infrastructure/RaspRouters";
 import cors from 'cors';
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/user", usersRouter);
 app.use("/reactions", reactionsRouter);
-app.use("/porcentaje", porcentajeRouter);
+app.use("/expe", expeRouter);
 app.use("/rasp", raspRouters)
 
 const port = 3003;

@@ -4,17 +4,17 @@ import { createPorcentajeController } from "./dependencies";
 import { getAllController } from "./dependencies";
 import { getByIdPorcentajeController } from "./dependencies";
 
-export const porcentajeRouter = express.Router();
+export const expeRouter = express.Router();
 
-porcentajeRouter.get(
+expeRouter.get(
   "/getAll",
   getAllController.run.bind(getAllController)
 );
-porcentajeRouter.get(
+expeRouter.get(
   "/:id",
   getByIdPorcentajeController.run.bind(getByIdPorcentajeController)
 );
-porcentajeRouter.post(
+expeRouter.post(
   "/crear",
   createPorcentajeController.run.bind(createPorcentajeController)
 );

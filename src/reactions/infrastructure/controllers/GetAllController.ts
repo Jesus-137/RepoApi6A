@@ -12,13 +12,8 @@ export class GetAllReactionsController {
             return {
               id: reaction.id,
               id_raspberry: reaction.id_raspberry,
-              co2: reaction.co2,
-              ch4: reaction.ch4,
-              ph: reaction.ph,
-              electricidad: reaction.electricidad,
-              tiempo_acumulado: reaction.tiempo_acumulado,
-              fecha: reaction.fecha,
-              hora: reaction.hora
+              name: reaction.name,
+              cantidad: reaction.cantidad
             };
           }),
         );

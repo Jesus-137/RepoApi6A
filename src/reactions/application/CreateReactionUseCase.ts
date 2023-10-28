@@ -5,25 +5,17 @@ export class CreateReactionUseCase {
   constructor(readonly reactionsRepo: ReactionsRepository) {}
 
   async run(
-    id_raspberry: number,
-    co2: number,
-    ch4: number,
-    ph: number,
-    electricidad: number,
-    tiempo_acumulado: number,
-    fecha: string,
-    hora: string
+    name: string,
+    cantidad: number,
+    tiempo: number,
+    id_expe: number
   ): Promise<Reactions | null> {
     try {
       const reaction = await this.reactionsRepo.createReaction(
-        id_raspberry,
-        co2,
-        ch4,
-        ph,
-        electricidad,
-        tiempo_acumulado,
-        fecha,
-        hora
+        name,
+        cantidad,
+        tiempo,
+        id_expe
       );
       return reaction;
     } catch (error) {

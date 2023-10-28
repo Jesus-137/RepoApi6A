@@ -6,16 +6,13 @@ export class GetAllController {
 
   async run(req: Request, res: Response) {
     try {
-      const porcentajes = await this.getAllUseCase.run();
-      if (porcentajes)
-        res.status(200).send(porcentajes.map((porcentaje: any) => {
+      const expes = await this.getAllUseCase.run();
+      if (expes)
+        res.status(200).send(expes.map((expe: any) => {
             return {
-              id: porcentaje.id,
-              id_user: porcentaje.id_raspberry,
-              co2: porcentaje.co2,
-              ch4: porcentaje.ch4,
-              ph: porcentaje.ph,
-              electricidad: porcentaje.electricidad
+              id: expe.id,
+              id_user: expe.id_user,
+              id_rasp: expe.id_rasp
             };
           }),
         );

@@ -11,14 +11,10 @@ export class MysqlReactionsRepository implements ReactionsRepository {
       const reaction = result[0][0]
       return new Reactions(
         reaction.id,
-        reaction.id_raspberry,
-        reaction.co2,
-        reaction.ch4,
-        reaction.ph,
-        reaction.electricidad,
-        reaction.tiempo_acumulado,
-        reaction.fecha,
-        reaction.hora
+        reaction.name,
+        reaction.cantidad,
+        reaction.tiempo,
+        reaction.id_expe
       );
     } catch (error) {
       return null;
@@ -33,14 +29,10 @@ export class MysqlReactionsRepository implements ReactionsRepository {
         (Reaction: any) =>
           new Reactions(
             Reaction.id,
-            Reaction.id_raspberry,
-            Reaction.co2,
-            Reaction.ch4,
-            Reaction.ph,
-            Reaction.electricidad,
-            Reaction.tiempo_acumulado,
-            Reaction.fecha,
-            Reaction.hora
+            Reaction.id_expe,
+            Reaction.name,
+            Reaction.cantidad,
+            Reaction.tiempo
           )
       );
     } catch (error) {
@@ -49,21 +41,17 @@ export class MysqlReactionsRepository implements ReactionsRepository {
   }
 
   async createReaction(
-    id_raspberry: number,
-    co2: number,
-    ch4: number,
-    ph: number,
-    electricidad: number,
-    tiempo_acumulado: number,
-    fecha: string,
-    hora: string
+    name: string,
+    cantidad: number,
+    tiempo: number,
+    id_expe: number
   ): Promise<Reactions | null> {
     const sql =
-"INSERT INTO reactions (id_raspberry, co2, ch4, ph, electricidad, tiempo_acumulado, fecha, hora) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    const params: any[] = [id_raspberry, co2, ch4, ph, electricidad, tiempo_acumulado, fecha, hora];
+"INSERT INTO reactions (name, cantidad, tiempo, id_expe) VALUES (?, ?, ?, ?)";
+    const params: any[] = [name, cantidad, tiempo, id_expe];
     try {
       const [result]: any = await query(sql, params);
-      return new Reactions(result.insertId, id_raspberry, co2, ch4, ph, electricidad, tiempo_acumulado, fecha, hora);
+      return new Reactions(result.insertId, name, cantidad, tiempo, id_expe);
     } catch (error) {
       return null;
     }

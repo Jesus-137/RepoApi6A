@@ -5,15 +5,15 @@ export class CreateUserUseCase {
   constructor(readonly usersRepo: UsersRepository) {}
 
   async run(
-    id_raspberry: number,
     userName: string,
-    password: string
+    password: string,
+    correo: string
   ): Promise<Users | null> {
     try {
       const user = await this.usersRepo.createUser(
-        id_raspberry,
         userName,
-        password
+        password,
+        correo
       );
       return user;
     } catch (error) {

@@ -40,15 +40,15 @@ export class MysqlUsersRepository implements UsersRepository {
   }
 
   async createUser(
-    id_raspberry: number,
     userName: string,
-    password: string
+    password: string,
+    correo: string,
   ): Promise<Users | null> {
-    const sql = "INSERT INTO users (id_raspberry, userName, password) VALUES (?, ?, ?)";
-    const params: any[] = [id_raspberry, userName, password];
+    const sql = "INSERT INTO users (userName, password, correo) VALUES (?, ?, ?)";
+    const params: any[] = [userName, password, correo];
     try {
       const [result]: any = await query(sql, params);
-      return new Users(result.insertId, id_raspberry, userName, password);
+      return new Users(result.insertId, userName, password, correo);
     } catch (error) {
       return null;
     }

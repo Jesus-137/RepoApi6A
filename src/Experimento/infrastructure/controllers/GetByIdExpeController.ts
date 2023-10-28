@@ -1,25 +1,22 @@
 import { Request, Response } from "express";
-import { GetByIdPorcentajeUseCase } from "../../application/GetByIdPorcentajeUseCase";
+import { GetByIdExpeUseCase } from "../../application/GetByIdExpeUseCase";
 
 export class GetByIdPorcentajeController {
-  constructor(readonly getByIdReactionCase: GetByIdPorcentajeUseCase) {}
+  constructor(readonly getByIdExpeCase: GetByIdExpeUseCase) {}
 
   async run(req: Request, res: Response) {
     const id: number = parseInt(req.params.id);
     try {
-      const porcentaje = await this.getByIdReactionCase.run(id);
+      const expe = await this.getByIdExpeCase.run(id);
 
-      if (porcentaje)
+      if (expe)
         //Code HTTP : 200 -> Consulta exitosa
         res.status(200).send({
           status: "success",
           data: {
-            id: porcentaje.id,
-            id_user: porcentaje.id_raspberry,
-            co2: porcentaje.co2,
-            ch4: porcentaje.ch4,
-            ph: porcentaje.ph,
-            electricidad: porcentaje.electricidad
+            id: expe.id,
+            id_user: expe.id_user,
+            id_rasp: expe.id_rasp
           },
         });
       else

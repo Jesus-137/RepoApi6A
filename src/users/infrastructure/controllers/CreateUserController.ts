@@ -10,9 +10,9 @@ export class CreateReactionController {
     const data = req.body;
     try {
       const user = await this.createUserUseCase.run(
-        data.id_raspberry,
         data.userName,
-        data.password
+        data.password,
+        data.correo
       );
       if (user)
         //Code HTTP : 201 -> Creado
@@ -20,9 +20,9 @@ export class CreateReactionController {
           status: "success",
           data: {
             id: user.id,
-            id_raspberry: user.id_raspberry,
             userName: user.userName,
-            password: user.password
+            password: user.password,
+            correo: user.correo
           },
         });
       else
