@@ -12,9 +12,9 @@ export class MysqlUsersRepository implements UsersRepository {
       console.log(user)
       return new Users(
         user.id,
-        user.id_raspberry,
         user.username,
-        user.password
+        user.password,
+        user.correo
       );
     } catch (error) {
       return null;
@@ -29,9 +29,9 @@ export class MysqlUsersRepository implements UsersRepository {
         (user: any) =>
           new Users(
             user.id,
-            user.id_raspberry,
-            user.userName,
-            user.password
+            user.username,
+            user.password,
+            user.correo
           )
       );
     } catch (error) {

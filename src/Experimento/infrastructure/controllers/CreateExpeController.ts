@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateExpeUseCase } from "../../application/CreateExpeUseCase";
 
-export class CreatePorcentajeController {
+export class CreateExpeController {
   constructor (
     readonly createExpeUseCase: CreateExpeUseCase
     ) {}
@@ -11,7 +11,7 @@ export class CreatePorcentajeController {
     try {
       const expe = await this.createExpeUseCase.run(
         data.id_user,
-        data.id_rasp,
+        data.id_rasp
       );
       if (expe){
         //Code HTTP : 201 -> Creado

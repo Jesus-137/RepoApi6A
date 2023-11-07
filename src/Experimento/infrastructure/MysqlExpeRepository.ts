@@ -40,7 +40,7 @@ export class MysqlPorcentajeRepository implements ExpeRepository {
     id_user: number,
     id_rasp: number
   ): Promise<Expe | null> {
-    const sql = "INSERT INTO experimento (id_user, id_rasp) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO experimento (id_user, id_rasp) VALUES (?, ?)";
     const params: any[] = [id_user, id_rasp];
     try {
       const [result]: any = await query(sql, params);

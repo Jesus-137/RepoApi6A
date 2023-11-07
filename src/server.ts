@@ -4,6 +4,7 @@ import { reactionsRouter } from "./Reactions/infrastructure/ReactionsRouter";
 import { usersRouter } from "./Users/infrastructure/UsersRouter";
 import { expeRouter } from "./Experimento/infrastructure/ExpeRouter";
 import { raspRouters } from "./Raspberry/infrastructure/RaspRouters";
+import { mediaRouter } from "./Media/infrastructure/MediaRouter";
 import cors from 'cors';
 
 const app = express();
@@ -13,7 +14,8 @@ app.use(cors());
 app.use("/user", usersRouter);
 app.use("/reactions", reactionsRouter);
 app.use("/expe", expeRouter);
-app.use("/rasp", raspRouters)
+app.use("/rasp", raspRouters);
+app.use("/media", mediaRouter);
 
 const port = 3003;
 const host = '0.0.0.0';

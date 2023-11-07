@@ -1,22 +1,24 @@
 import { Request, Response } from "express";
-import { GetByIdExpeUseCase } from "../../application/GetByIdExpeUseCase";
+import { GetByIdMediaUseCase } from "../../application/GetByIdMediaUseCase";
 
 export class GetByIdExpeController {
-  constructor(readonly getByIdExpeCase: GetByIdExpeUseCase) {}
+  constructor(readonly getByIdExpeCase: GetByIdMediaUseCase) {}
 
   async run(req: Request, res: Response) {
     const id: number = parseInt(req.params.id);
     try {
-      const expe = await this.getByIdExpeCase.run(id);
+      const media = await this.getByIdExpeCase.run(id);
 
-      if (expe)
+      if (media)
         //Code HTTP : 200 -> Consulta exitosa
         res.status(200).send({
           status: "success",
           data: {
-            id: expe.id,
-            id_user: expe.id_user,
-            id_rasp: expe.id_rasp
+            id: media.id,
+            co2: media.co2,
+            ch4: media.ch4,
+            ph: media.ph,
+            conductividad: media.conductividad
           },
         });
       else

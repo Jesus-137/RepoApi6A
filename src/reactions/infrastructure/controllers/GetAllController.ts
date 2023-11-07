@@ -11,9 +11,10 @@ export class GetAllReactionsController {
         res.status(200).send(reactions.map((reaction: any) => {
             return {
               id: reaction.id,
-              id_raspberry: reaction.id_raspberry,
               name: reaction.name,
-              cantidad: reaction.cantidad
+              cantidad: reaction.cantidad,
+              tiempo: reaction.tiempo,
+              id_expe: reaction.id_expe
             };
           }),
         );

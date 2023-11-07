@@ -29,10 +29,10 @@ export class MysqlReactionsRepository implements ReactionsRepository {
         (Reaction: any) =>
           new Reactions(
             Reaction.id,
-            Reaction.id_expe,
             Reaction.name,
             Reaction.cantidad,
-            Reaction.tiempo
+            Reaction.tiempo,
+            Reaction.id_expe
           )
       );
     } catch (error) {
