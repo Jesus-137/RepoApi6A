@@ -1,7 +1,7 @@
 import express from "express";
 
-import { getAllController } from "./dependencies.ts";
-import { getByIdMediaController } from "./dependencies.ts";
+import { getAllController } from "./dependencies";
+import { getByIdMediaController } from "./dependencies";
 
 export const mediaRouter = express.Router();
 

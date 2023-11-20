@@ -1,5 +1,5 @@
 import { Request,Response } from "express";
-import { CreateRaspUseCase } from "../../application/CreateRaspUseCase.ts";
+import { CreateRaspUseCase } from "../../application/CreateRaspUseCase";
 
 export class CreateRaspController{
     constructor(

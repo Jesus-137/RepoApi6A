@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetAllUseCase } from "../../application/GetAllUseCase.ts";
+import { GetAllUseCase } from "../../application/GetAllUseCase";
 
 export class GetAllReactionsController {
   constructor(readonly getAllUseCase: GetAllUseCase) {}

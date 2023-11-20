@@ -1,5 +1,5 @@
-import { Media } from "../domain/Media.ts";
-import { MediaRepository } from "../domain/MediaRepository.ts";
+import { Media } from "../domain/Media";
+import { MediaRepository } from "../domain/MediaRepository";
 
 export class GetByIdMediaUseCase {
   constructor(readonly mediaRepo: MediaRepository) {}

@@ -1,6 +1,6 @@
-import { query } from "../../database/mysql.ts";
-import { Reactions } from "../domain/Reactions.ts";
-import { ReactionsRepository } from "../domain/ReactionsRepository.ts";
+import { query } from "../../database/mysql";
+import { Reactions } from "../domain/Reactions";
+import { ReactionsRepository } from "../domain/ReactionsRepository";
 
 export class MysqlReactionsRepository implements ReactionsRepository {
   async getById (id: number): Promise<Reactions | null> {

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetByIdReactionUseCase } from "../../application/GetByIReactionUseCase.ts";
+import { GetByIdReactionUseCase } from "../../application/GetByIReactionUseCase";
 
 export class GetByIdReactionController {
   constructor(readonly getByIdReactionCase: GetByIdReactionUseCase) {}

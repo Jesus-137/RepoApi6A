@@ -1,8 +1,8 @@
 import express from "express";
 
-import { createPorcentajeController } from "./dependencies.ts";
-import { getAllController } from "./dependencies.ts";
-import { getByIdPorcentajeController } from "./dependencies.ts";
+import { createPorcentajeController } from "./dependencies";
+import { getAllController } from "./dependencies";
+import { getByIdPorcentajeController } from "./dependencies";
 
 export const expeRouter = express.Router();
 

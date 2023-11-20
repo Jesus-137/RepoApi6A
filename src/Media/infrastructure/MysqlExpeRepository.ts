@@ -1,6 +1,6 @@
-import { query } from "../../database/mysql.ts";
-import { Media } from "../domain/Media.ts";
-import { MediaRepository } from "../domain/MediaRepository.ts";
+import { query } from "../../database/mysql";
+import { Media } from "../domain/Media";
+import { MediaRepository } from "../domain/MediaRepository";
 
 export class MysqlMediaRepository implements MediaRepository {
   async getById (id: number): Promise<Media[] | null> {

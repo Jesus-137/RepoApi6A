@@ -1,5 +1,5 @@
-import { Desviacion } from "../domain/Desviacion.ts";
-import { DesviacionRepository } from "../domain/DesviacionRepository.ts";
+import { Desviacion } from "../domain/Desviacion";
+import { DesviacionRepository } from "../domain/DesviacionRepository";
 
 export class CreateDesviacionUseCase {
   constructor(readonly desviacionRepo: DesviacionRepository) {}

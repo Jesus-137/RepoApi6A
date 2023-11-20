@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetAllUseCase } from "../../application/GetAllUseCase.ts";
+import { GetAllUseCase } from "../../application/GetAllUseCase";
 import jwt  from "jsonwebtoken";
 
 export class GetAllController {

@@ -1,4 +1,4 @@
-import { Expe } from "./Expe.ts";
+import { Expe } from "./Expe";
 
 export interface ExpeRepository {
   getAll(): Promise<Expe[] | null>;

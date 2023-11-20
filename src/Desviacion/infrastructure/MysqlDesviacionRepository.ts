@@ -1,6 +1,6 @@
-import { query } from "../../database/mysql.ts";
-import { Desviacion } from "../domain/Desviacion.ts";
-import { DesviacionRepository } from "../domain/DesviacionRepository.ts";
+import { query } from "../../database/mysql";
+import { Desviacion } from "../domain/Desviacion";
+import { DesviacionRepository } from "../domain/DesviacionRepository";
 
 export class MysqlDesviacionRepository implements DesviacionRepository {
   async getById (id: number): Promise<Desviacion | null> {

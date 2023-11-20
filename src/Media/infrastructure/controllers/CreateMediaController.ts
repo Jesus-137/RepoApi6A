@@ -1,5 +1,5 @@
-import { CreateMediaUseCase } from "../../application/CreateMediaUseCase.ts";
-import { MysqlReactionsRepository } from "../../../Reactions/infrastructure/MysqlReactionsRepository.ts";
+import { CreateMediaUseCase } from "../../application/CreateMediaUseCase";
+import { MysqlReactionsRepository } from "../../../Reactions/infrastructure/MysqlReactionsRepository";
 
 
 export class CreateMediaController {

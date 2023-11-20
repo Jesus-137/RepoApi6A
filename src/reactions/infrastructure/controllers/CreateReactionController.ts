@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateReactionUseCase } from "../../application/CreateReactionUseCase.ts";
+import { CreateReactionUseCase } from "../../application/CreateReactionUseCase";
 
 export class CreateReactionController {
   constructor (

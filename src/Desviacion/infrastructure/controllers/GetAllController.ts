@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { GetAllUseCase } from "../../application/GetAllUseCase.ts";
-import { CreateDesviacionController } from "./CreateDesviacionController.ts";
+import { GetAllUseCase } from "../../application/GetAllUseCase";
+import { CreateDesviacionController } from "./CreateDesviacionController";
 
 export class GetAllController {
   constructor(

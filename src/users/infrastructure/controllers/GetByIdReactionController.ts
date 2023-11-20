@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetByIdPorcentajeUseCase } from "../../application/GetByIdUserUseCase.ts";
+import { GetByIdPorcentajeUseCase } from "../../application/GetByIdUserUseCase";
 
 export class GetByIdReactionController {
   constructor(readonly getByIdReactionCase: GetByIdPorcentajeUseCase) {}

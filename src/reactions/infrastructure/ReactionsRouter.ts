@@ -1,8 +1,8 @@
 import express from "express";
 
-import { createReactionController } from "./dependencies.ts";
-import { getAllController } from "./dependencies.ts";
-import { getByIdReactionController } from "./dependencies.ts";
+import { createReactionController } from "./dependencies";
+import { getAllController } from "./dependencies";
+import { getByIdReactionController } from "./dependencies";
 
 export const reactionsRouter = express.Router();
 

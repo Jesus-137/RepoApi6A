@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetByIdUseCase } from "../../application/GetByIdUseCase.ts";
+import { GetByIdUseCase } from "../../application/GetByIdUseCase";
 
 export class GetByIdController{
     constructor(

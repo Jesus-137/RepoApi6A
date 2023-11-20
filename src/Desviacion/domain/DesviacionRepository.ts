@@ -1,4 +1,4 @@
-import { Desviacion } from "./Desviacion.ts";
+import { Desviacion } from "./Desviacion";
 
 export interface DesviacionRepository {
   getAll(): Promise<Desviacion[] | null>;
