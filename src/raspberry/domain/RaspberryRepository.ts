@@ -1,4 +1,4 @@
-import { Raspberry } from "./Raspberry";
+import { Raspberry } from "./Raspberry.ts";
 
 export interface RaspberryRepository{
     getAll(): Promise<Raspberry[] | null>

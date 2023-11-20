@@ -1,7 +1,7 @@
 import express from "express";
 
-import { getAllController } from "./dependencies";
-import { getByIdDesviacionController } from "./dependencies";
+import { getAllController } from "./dependencies.ts";
+import { getByIdDesviacionController } from "./dependencies.ts";
 
 export const desviacionRouter = express.Router();
 

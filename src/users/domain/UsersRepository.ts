@@ -1,4 +1,4 @@
-import { Users } from "./Users";
+import { Users } from "./Users.ts";
 
 export interface UsersRepository {
   getAll(): Promise<Users[] | null>;

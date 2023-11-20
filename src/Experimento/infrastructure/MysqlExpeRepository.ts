@@ -1,6 +1,6 @@
-import { query } from "../../database/mysql";
-import { Expe } from "../domain/Expe";
-import { ExpeRepository } from "../domain/ExpeRepository";
+import { query } from "../../database/mysql.ts";
+import { Expe } from "../domain/Expe.ts";
+import { ExpeRepository } from "../domain/ExpeRepository.ts";
 
 export class MysqlPorcentajeRepository implements ExpeRepository {
   async getById (id: number): Promise<Expe | null> {

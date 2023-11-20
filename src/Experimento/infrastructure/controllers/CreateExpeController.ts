@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateExpeUseCase } from "../../application/CreateExpeUseCase";
+import { CreateExpeUseCase } from "../../application/CreateExpeUseCase.ts";
 
 export class CreateExpeController {
   constructor (

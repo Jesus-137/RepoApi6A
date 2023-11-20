@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { GetAllUseCase } from "../../application/GetAllUseCase";
-import { CreateMediaController } from "./CreateMediaController";
+import { GetAllUseCase } from "../../application/GetAllUseCase.ts";
+import { CreateMediaController } from "./CreateMediaController.ts";
 
 export class GetAllController {
   constructor(

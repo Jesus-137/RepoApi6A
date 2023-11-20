@@ -1,5 +1,5 @@
-import { Expe } from "../domain/Expe";
-import { ExpeRepository } from "../domain/ExpeRepository";
+import { Expe } from "../domain/Expe.ts";
+import { ExpeRepository } from "../domain/ExpeRepository.ts";
 
 export class CreateExpeUseCase {
   constructor(readonly expeRepo: ExpeRepository) {}

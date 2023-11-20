@@ -1,11 +1,11 @@
-import { MysqlMediaRepository } from "./MysqlExpeRepository";
-import { CreateMediaUseCase } from "../application/CreateMediaUseCase";
-import { GetByIdMediaUseCase } from "../application/GetByIdMediaUseCase";
-import { GetAllUseCase } from "../application/GetAllUseCase";
-import { CreateMediaController } from "./controllers/CreateMediaController";
-import { GetAllController } from "./controllers/GetAllController";
-import { GetByIdExpeController } from "./controllers/GetByIdExpeController";
-import { MysqlReactionsRepository } from "../../Reactions/infrastructure/MysqlReactionsRepository";
+import { MysqlMediaRepository } from "./MysqlExpeRepository.ts";
+import { CreateMediaUseCase } from "../application/CreateMediaUseCase.ts";
+import { GetByIdMediaUseCase } from "../application/GetByIdMediaUseCase.ts";
+import { GetAllUseCase } from "../application/GetAllUseCase.ts";
+import { CreateMediaController } from "./controllers/CreateMediaController.ts";
+import { GetAllController } from "./controllers/GetAllController.ts";
+import { GetByIdExpeController } from "./controllers/GetByIdExpeController.ts";
+import { MysqlReactionsRepository } from "../../Reactions/infrastructure/MysqlReactionsRepository.ts";
 
 export const mysqlMediaRepository = new MysqlMediaRepository();
 const mysqlReactionsRepo = new MysqlReactionsRepository();

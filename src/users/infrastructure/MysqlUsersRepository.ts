@@ -1,6 +1,6 @@
-import { query } from "../../database/mysql";
-import { Users } from "../domain/Users";
-import { UsersRepository } from "../domain/UsersRepository";
+import { query } from "../../database/mysql.ts";
+import { Users } from "../domain/Users.ts";
+import { UsersRepository } from "../domain/UsersRepository.ts";
 
 export class MysqlUsersRepository implements UsersRepository {
   async login(userName: string, password: string): Promise<Users | null> {

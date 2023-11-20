@@ -1,9 +1,9 @@
 import express from "express";
 
-import { createUserController } from "./dependencies";
-import { getAllController } from "./dependencies";
-import { getByIdUserController } from "./dependencies";
-import { loginController } from "./dependencies";
+import { createUserController } from "./dependencies.ts";
+import { getAllController } from "./dependencies.ts";
+import { getByIdUserController } from "./dependencies.ts";
+import { loginController } from "./dependencies.ts";
 
 export const usersRouter = express.Router();
 

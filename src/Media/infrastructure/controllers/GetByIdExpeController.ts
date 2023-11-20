@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetByIdMediaUseCase } from "../../application/GetByIdMediaUseCase";
+import { GetByIdMediaUseCase } from "../../application/GetByIdMediaUseCase.ts";
 
 export class GetByIdExpeController {
   constructor(readonly getByIdExpeCase: GetByIdMediaUseCase) {}

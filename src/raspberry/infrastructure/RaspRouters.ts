@@ -1,8 +1,8 @@
 import express  from "express";
 
-import { createRaspController } from "./dependencies";
-import { getAllController } from "./dependencies";
-import { getByIdController } from "./dependencies";
+import { createRaspController } from "./dependencies.ts";
+import { getAllController } from "./dependencies.ts";
+import { getByIdController } from "./dependencies.ts";
 
 export const raspRouters = express.Router();
 

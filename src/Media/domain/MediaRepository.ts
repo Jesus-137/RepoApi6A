@@ -1,4 +1,4 @@
-import { Media } from "./Media";
+import { Media } from "./Media.ts";
 
 export interface MediaRepository {
   getAll(): Promise<Media[] | null>;

@@ -1,5 +1,5 @@
-import { Raspberry } from "../domain/Raspberry";
-import { RaspberryRepository } from "../domain/RaspberryRepository";
+import { Raspberry } from "../domain/Raspberry.ts";
+import { RaspberryRepository } from "../domain/RaspberryRepository.ts";
 
 export class GetAllUseCase {
     constructor (readonly raspRepo:RaspberryRepository){}

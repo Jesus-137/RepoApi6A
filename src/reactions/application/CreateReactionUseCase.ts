@@ -1,5 +1,5 @@
-import { Reactions } from "../domain/Reactions";
-import { ReactionsRepository } from "../domain/ReactionsRepository";
+import { Reactions } from "../domain/Reactions.ts";
+import { ReactionsRepository } from "../domain/ReactionsRepository.ts";
 
 export class CreateReactionUseCase {
   constructor(readonly reactionsRepo: ReactionsRepository) {}

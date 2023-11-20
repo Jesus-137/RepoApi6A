@@ -1,5 +1,5 @@
-import { Users } from "../domain/Users";
-import { UsersRepository } from "../domain/UsersRepository";
+import { Users } from "../domain/Users.ts";
+import { UsersRepository } from "../domain/UsersRepository.ts";
 
 export class GetAllUseCase {
   constructor(readonly userRepo: UsersRepository) {}

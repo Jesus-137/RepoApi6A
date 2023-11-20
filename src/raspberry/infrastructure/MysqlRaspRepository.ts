@@ -1,6 +1,6 @@
-import { query } from "../../database/mysql";
-import { Raspberry } from "../domain/Raspberry";
-import { RaspberryRepository } from "../domain/RaspberryRepository";
+import { query } from "../../database/mysql.ts";
+import { Raspberry } from "../domain/Raspberry.ts";
+import { RaspberryRepository } from "../domain/RaspberryRepository.ts";
 
 export class MysqlRaspRepository implements RaspberryRepository{
     async getAll(): Promise<Raspberry[] | null> {

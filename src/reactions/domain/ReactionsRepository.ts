@@ -1,4 +1,4 @@
-import { Reactions } from "./Reactions";
+import { Reactions } from "./Reactions.ts";
 
 export interface ReactionsRepository {
   getAll(): Promise<Reactions[] | null>;

@@ -1,6 +1,6 @@
-import { CreateDesviacionUseCase } from "../../application/CreateDesviacionUseCase";
-import { MysqlReactionsRepository } from "../../../Reactions/infrastructure/MysqlReactionsRepository";
-import { MysqlMediaRepository } from "../../../Media/infrastructure/MysqlExpeRepository";
+import { CreateDesviacionUseCase } from "../../application/CreateDesviacionUseCase.ts";
+import { MysqlReactionsRepository } from "../../../Reactions/infrastructure/MysqlReactionsRepository.ts";
+import { MysqlMediaRepository } from "../../../Media/infrastructure/MysqlExpeRepository.ts";
 
 
 export class CreateDesviacionController {

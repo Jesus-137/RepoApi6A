@@ -1,12 +1,12 @@
-import { MysqlDesviacionRepository } from "./MysqlDesviacionRepository";
-import { CreateDesviacionUseCase } from "../application/CreateDesviacionUseCase";
-import { GetByIdDesviacionUseCase } from "../application/GetByIdDesviacionUseCase";
-import { GetAllUseCase } from "../application/GetAllUseCase";
-import { CreateDesviacionController } from "./controllers/CreateDesviacionController";
-import { GetAllController } from "./controllers/GetAllController";
-import { GetByIdDesviacionController } from "./controllers/GetByIdDesviacionController";
-import { MysqlReactionsRepository } from "../../Reactions/infrastructure/MysqlReactionsRepository";
-import { MysqlMediaRepository } from "../../Media/infrastructure/MysqlExpeRepository";
+import { MysqlDesviacionRepository } from "./MysqlDesviacionRepository.ts";
+import { CreateDesviacionUseCase } from "../application/CreateDesviacionUseCase.ts";
+import { GetByIdDesviacionUseCase } from "../application/GetByIdDesviacionUseCase.ts";
+import { GetAllUseCase } from "../application/GetAllUseCase.ts";
+import { CreateDesviacionController } from "./controllers/CreateDesviacionController.ts";
+import { GetAllController } from "./controllers/GetAllController.ts";
+import { GetByIdDesviacionController } from "./controllers/GetByIdDesviacionController.ts";
+import { MysqlReactionsRepository } from "../../Reactions/infrastructure/MysqlReactionsRepository.ts";
+import { MysqlMediaRepository } from "../../Media/infrastructure/MysqlExpeRepository.ts";
 
 export const mysqlDesviacionRepository = new MysqlDesviacionRepository();
 const mysqlReactionsRepo = new MysqlReactionsRepository();

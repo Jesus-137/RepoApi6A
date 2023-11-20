@@ -1,11 +1,11 @@
 import { Signale } from "signale";
 import express from "express";
-import { reactionsRouter } from "./Reactions/infrastructure/ReactionsRouter"; 
-import { usersRouter } from "./Users/infrastructure/UsersRouter";
-import { expeRouter } from "./Experimento/infrastructure/ExpeRouter";
-import { raspRouters } from "./Raspberry/infrastructure/RaspRouters";
-import { mediaRouter } from "./Media/infrastructure/MediaRouter";
-import { desviacionRouter } from "./Desviacion/infrastructure/DesviacionRouter";
+import { reactionsRouter } from "./Reactions/infrastructure/ReactionsRouter.ts"; 
+import { usersRouter } from "./Users/infrastructure/UsersRouter.ts";
+import { expeRouter } from "./Experimento/infrastructure/ExpeRouter.ts";
+import { raspRouters } from "./Raspberry/infrastructure/RaspRouters.ts";
+import { mediaRouter } from "./Media/infrastructure/MediaRouter.ts";
+import { desviacionRouter } from "./Desviacion/infrastructure/DesviacionRouter.ts";
 import cors from 'cors';
 
 const app = express();

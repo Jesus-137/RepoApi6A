@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { LoginUseCase } from "../../application/LoginUseCase";
+import { LoginUseCase } from "../../application/LoginUseCase.ts";
 import jwt from 'jsonwebtoken';
 
 export class LoginController {

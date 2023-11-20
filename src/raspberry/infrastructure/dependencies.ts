@@ -1,10 +1,10 @@
-import { MysqlRaspRepository } from "./MysqlRaspRepository";
-import { CreateRaspUseCase } from "../application/CreateRaspUseCase";
-import { GetAllUseCase } from "../application/GetAllUseCase";
-import { GetByIdUseCase } from "../application/GetByIdUseCase";
-import { CreateRaspController } from "./controlers/CreateRaspController";
-import { GetAllController } from "./controlers/GetAllController";
-import { GetByIdController } from "./controlers/GetByIdController";
+import { MysqlRaspRepository } from "./MysqlRaspRepository.ts";
+import { CreateRaspUseCase } from "../application/CreateRaspUseCase.ts";
+import { GetAllUseCase } from "../application/GetAllUseCase.ts";
+import { GetByIdUseCase } from "../application/GetByIdUseCase.ts";
+import { CreateRaspController } from "./controlers/CreateRaspController.ts";
+import { GetAllController } from "./controlers/GetAllController.ts";
+import { GetByIdController } from "./controlers/GetByIdController.ts";
 
 export const mysqlRaspRepo = new MysqlRaspRepository();
 export const createRaspUseCase = new CreateRaspUseCase(
