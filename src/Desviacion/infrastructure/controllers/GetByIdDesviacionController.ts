@@ -1,28 +1,26 @@
 import { Request, Response } from "express";
-import { GetByIdMediaUseCase } from "../../application/GetByIdMediaUseCase";
+import { GetByIdDesviacionUseCase } from "../../application/GetByIdDesviacionUseCase";
 
-export class GetByIdExpeController {
-  constructor(readonly getByIdExpeCase: GetByIdMediaUseCase) {}
+export class GetByIdDesviacionController {
+  constructor(readonly getByIdExpeCase: GetByIdDesviacionUseCase) {}
 
   async run(req: Request, res: Response) {
     const id: number = parseInt(req.params.id);
     try {
-      const medias = await this.getByIdExpeCase.run(id);
+      const media = await this.getByIdExpeCase.run(id);
 
-      if (medias)
+      if (media)
         //Code HTTP : 200 -> Consulta exitosa
         res.status(200).send({
           status: "success",
-          data: medias.map((media: any)=>{
-            return {
-              id: media.id,
-              id_user: media.id_user,
-              co2: media.co2,
-              ch4: media.ch4,
-              ph: media.ph,
-              conductividad: media.conductividad
-            }
-          }),
+          data: {
+            id: media.id,
+            id_user: media.id_user,
+            co2: media.co2,
+            ch4: media.ch4,
+            ph: media.ph,
+            conductividad: media.conductividad
+          },
         });
       else
         res.status(400).send({

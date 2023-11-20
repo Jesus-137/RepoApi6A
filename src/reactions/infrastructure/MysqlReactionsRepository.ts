@@ -25,6 +25,7 @@ export class MysqlReactionsRepository implements ReactionsRepository {
     try {
       const [data]: any = await query(sql, []);
       const dataReactions = Object.values(JSON.parse(JSON.stringify(data)));
+      console.log(dataReactions)
       return dataReactions.map(
         (Reaction: any) =>
           new Reactions(

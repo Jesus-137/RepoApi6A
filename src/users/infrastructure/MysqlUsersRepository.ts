@@ -3,6 +3,18 @@ import { Users } from "../domain/Users";
 import { UsersRepository } from "../domain/UsersRepository";
 
 export class MysqlUsersRepository implements UsersRepository {
+  async login(userName: string, password: string): Promise<Users | null> {
+    const sql = "SELECT * FROM users WHERE userName=? and password=?";
+    const params: any[]=[userName, password];
+    try {
+      const result: any= await query(sql, params);
+      const user = result[0][0];
+      console.log(user)
+      return user;
+    } catch (error) {
+      return null;
+    }
+  }
   async getById (id: number): Promise<Users | null> {
     const sql = "SELECT * FROM users WHERE id=?";
     const params: any[] = [id];

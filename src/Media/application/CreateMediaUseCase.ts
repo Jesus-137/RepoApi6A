@@ -5,6 +5,7 @@ export class CreateMediaUseCase {
   constructor(readonly mediaRepo: MediaRepository) {}
 
   async run(
+    id_user: number,
     co2: number,
     ch4: number,
     ph: number,
@@ -12,6 +13,7 @@ export class CreateMediaUseCase {
   ): Promise<Media | null> {
     try {
       const user = await this.mediaRepo.createMedia(
+        id_user,
         co2,
         ch4,
         ph,

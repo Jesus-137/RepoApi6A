@@ -1,18 +1,18 @@
 import { Request, Response } from "express";
 import { GetAllUseCase } from "../../application/GetAllUseCase";
-import { CreateMediaController } from "./CreateMediaController";
+import { CreateDesviacionController } from "./CreateDesviacionController";
 
 export class GetAllController {
   constructor(
     readonly getAllUseCase: GetAllUseCase,
-    readonly createMediaController: CreateMediaController
+    readonly createdesviacionController: CreateDesviacionController
   ) {}
 
   async run(req: Request, res: Response) {
     const id: number = parseInt(req.params.id);
     try {
-      const createMedia: any = await this.createMediaController.run(id);
-      if (createMedia==1){
+      const createDesviacion: any = await this.createdesviacionController.run(id);
+      if (createDesviacion==1){
         const medias = await this.getAllUseCase.run();
         if (medias)
           res.status(200).send(
@@ -35,7 +35,7 @@ export class GetAllController {
             status: "error",
             msn: "Ocurrio algún problema",
           });
-      }else if(createMedia==0){
+      }else if(createDesviacion==0){
         res.status(400).send({
           status: "error",
           msn: "Ocurrio algún problema con el guardado",

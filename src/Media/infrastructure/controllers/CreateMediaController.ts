@@ -8,28 +8,33 @@ export class CreateMediaController {
     readonly mysqlReactionsRepo: MysqlReactionsRepository
   ) { }
 
-  async run() {
+  async run(id_user: number) {
     try {
       const exp: any = await this.mysqlReactionsRepo.getAll();
       console.log(exp)
-      let co2=0, ch4=0, ph=0, conductividad=0;
+      let co2=0, nCo2=0, ch4=0, nCh4=0, ph=0, nPh=0, conductividad=0, nConductividad=0;
       if (exp){
         for (let i = 0; i < exp.length; i++) {
           if (exp[i].name=='co2'){
             co2 += exp[i].cantidad;
+            nCo2++
           }else if (exp[i].name=='ch4'){
             ch4 += exp[i].cantidad;
+            nCh4++
           }else if(exp[i].name=='ph'){
             ph += exp[i].cantidad;
+            nPh++
           }else if(exp[i].name=='conductividad'){
-            conductividad += exp[i].conductividad
+            conductividad += exp[i].cantidad
+            nConductividad++
           }
         }
-        const mco2 = co2/exp.length;
-        const mch4 = ch4/exp.length;
-        const mph = ph/exp.length;
-        const mconductividad = conductividad/exp.length;
+        const mco2 = co2/nCo2;
+        const mch4 = ch4/nCh4;
+        const mph = ph/nPh;
+        const mconductividad = conductividad/nConductividad;
         const media = await this.createMediaUseCase.run(
+          id_user,
           mco2,
           mch4,
           mph,

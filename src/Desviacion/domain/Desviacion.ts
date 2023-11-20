@@ -1,4 +1,4 @@
-export class Media {
+export class Desviacion {
   constructor(
     readonly id: number,
     readonly id_user: number,

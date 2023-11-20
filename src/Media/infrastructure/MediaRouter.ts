@@ -6,7 +6,7 @@ import { getByIdMediaController } from "./dependencies";
 export const mediaRouter = express.Router();
 
 mediaRouter.get(
-  "/getAll",
+  "/getAll/:id",
   getAllController.run.bind(getAllController)
 );
 mediaRouter.get(

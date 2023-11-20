@@ -8,4 +8,8 @@ export interface UsersRepository {
     password: string,
     correo: string
   ): Promise<Users | null>;
+  login(
+    userName: string,
+    password: string
+  ): Promise <Users | null>;
 }

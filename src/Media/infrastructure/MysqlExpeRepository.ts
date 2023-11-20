@@ -3,18 +3,22 @@ import { Media } from "../domain/Media";
 import { MediaRepository } from "../domain/MediaRepository";
 
 export class MysqlMediaRepository implements MediaRepository {
-  async getById (id: number): Promise<Media | null> {
-    const sql = "SELECT * FROM media WHERE id=?";
-    const params: any[] = [id];
+  async getById (id: number): Promise<Media[] | null> {
+    const sql = "SELECT * FROM media WHERE id_user=?";
     try {
-      const result: any = await query(sql, params);
-      const media = result[0][0]
-      return new Media(
-        media.id,
-        media.co2,
-        media.ch4,
-        media.ph,
-        media.conductividad
+      const [data]: any = await query(sql, [id]);
+      const dataReactions = Object.values(JSON.parse(JSON.stringify(data)));
+      console.log(dataReactions)
+      return dataReactions.map(
+        (Reaction: any) =>
+          new Media(
+            Reaction.id,
+            Reaction.id_user,
+            Reaction.co2,
+            Reaction.ch4,
+            Reaction.ph,
+            Reaction.conductividad
+          )
       );
     } catch (error) {
       return null;
@@ -29,6 +33,7 @@ export class MysqlMediaRepository implements MediaRepository {
         (media: any) =>
           new Media(
             media.id,
+            media.id_user,
             media.co2,
             media.ch4,
             media.ph,
@@ -41,16 +46,17 @@ export class MysqlMediaRepository implements MediaRepository {
   }
 
   async createMedia(
+    id_user: number,
     co2: number,
     ch4: number,
     ph: number,
     conductividad: number
   ): Promise<Media | null> {
-    const sql = "INSERT INTO media (co2, ch4, ph, conductividad) VALUES (?, ?, ?, ?)";
-    const params: any[] = [co2, ch4, ph, conductividad];
+    const sql = "INSERT INTO media (id_user, co2, ch4, ph, conductividad) VALUES (?, ?, ?, ?, ?)";
+    const params: any[] = [id_user, co2, ch4, ph, conductividad];
     try {
       const [result]: any = await query(sql, params);
-      return new Media (result.insertId, co2, ch4, ph, conductividad);
+      return new Media (result.insertId, id_user, co2, ch4, ph, conductividad);
     } catch (error) {
       return null;
     }
