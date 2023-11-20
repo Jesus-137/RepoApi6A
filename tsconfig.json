@@ -16,7 +16,7 @@
   "include": [
     "src/**/**/**.ts",
     "tests/**/**.ts",
-    "playground/**/**.ts", "src/server.js",
+    "playground/**/**.ts", "src/server.ts", "src/Users/infrastructure/UsersRouter.ts", "src/Users/infrastructure/MysqlUsersRepository.ts", "src/Users/infrastructure/dependencies.ts", "src/Users/infrastructure/controllers/LoginController.ts", "src/Users/infrastructure/controllers/GetByIdReactionController.ts", "src/Users/infrastructure/controllers/GetAllController.js", "src/Users/infrastructure/controllers/CreateUserController.js", "src/Users/domain/UsersRepository.ts", "src/Users/domain/Users.ts",
   ],
   "exclude": ["node_modules"]
 }
