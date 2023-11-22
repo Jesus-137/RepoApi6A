@@ -17,7 +17,7 @@ app.use("/reactions", reactionsRouter);
 app.use("/expe", expeRouter);
 app.use("/rasp", raspRouters);
 app.use("/media", mediaRouter);
-app.use("/desviacion", desviacionRouter)
+app.use("/desviacion", desviacionRouter);
 
 const port = 3003;
 const host = '0.0.0.0';

@@ -27,13 +27,13 @@ export class CreateReactionController {
         });
       else
         res.status(204).send({
-          status: "error",
+          status: "error1",
           data: "NO fue posible agregar el registro",
         });
     } catch (error) {
       //Code HTTP : 204 Sin contenido
       res.status(204).send({
-        status: "error",
+        status: "error2",
         data: "Ocurrio un error",
         msn: error,
       });

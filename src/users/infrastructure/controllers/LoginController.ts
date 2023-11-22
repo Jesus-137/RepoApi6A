@@ -13,13 +13,18 @@ export class LoginController {
             data.password
         );
         if (user){
-            const userName = data.userName
+            const userName = user.userName
             const token = jwt.sign({ userName }, 'tu_secreto_secreto', { expiresIn: '1h' });
-            res.json({ token });
+            res.status(200).send({
+              status: "ok",
+              token: token,
+              msn: "Nombre de usario o contraceña incorectos",
+            });
         }
         else
             res.status(400).send({
                 status: "error",
+                token: '',
                 msn: "Nombre de usario o contraceña incorectos",
             });
     } catch (error) {
